@@ -22,4 +22,3 @@ def pascal_triangle(n):
         triangle.append(temp_list)
     # print(triangle)
     return triangle
-    

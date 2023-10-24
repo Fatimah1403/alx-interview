@@ -26,7 +26,7 @@
 > Each integer represents 1 byte of data, therefore you only need to handle the 8 least significant bits of each integer.
 
 ``` bash
-root@ubuntu-focal:/alx-project/alx-interview/0x04-utf8_validation#
+root@ubuntu-focal:/alx-project/alx-interview/0x04-utf8_validation#./0-main.py
 True
 True
 False

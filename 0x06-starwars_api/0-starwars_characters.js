@@ -27,7 +27,7 @@ const getMovieData = () => {
 // fetch the character and print them.
 const fetchAndPrintCharacters = (movie) => {
   return new Promise((resolve, reject) => {
-    console.log(`Characters in ${movie.title} (Episode ${movie.episode_id}):`);
+   // console.log(`Characters in ${movie.title} (Episode ${movie.episode_id}):`);
     const characterURLs = movie.characters;
 
     const characterPromises = characterURLs.map((characterURL) => {

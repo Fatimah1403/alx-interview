@@ -10,20 +10,22 @@ def makeChange(coins, total):
         coins (list):  is a list of the values of the coins in your possessio
         total (int): the total amount to be made using the coins
     """
-    i = 0
-    counter = 0
-    num_coins = len(coins)
-    sum = 0
-    coins.sort(reverse=True)
+    # Initialize an array to store the minimum number
+    # of coins needed for each total value
+    count = [float('inf')] * (total + 1)
+    
+    # 0 coins needed to make a total of 0
+    count[0] = 0
 
-    if total <= 0:
-        return 0
+    # Iterate through each coin value
+    for coin in coins:
+        for i in range(coin, total + 1):
+            count[i] = min(count[i], count[i - coin] + 1)
 
-    while sum < total and i < num_coins:
-        while coins[i] < total - sum:
-            sum += coins[i]
-            counter += 1
-            if sum == total:
-                return counter
-        i += 1
-    return -1
+    # If count[total] is still float('inf'),total can't be made.
+    if count[total] == float('inf'):
+        return -1
+    else:
+        # Return the minimum number of coins needed for the given total
+        return count[total]
+

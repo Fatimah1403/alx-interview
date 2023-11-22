@@ -13,7 +13,7 @@ def makeChange(coins, total):
     # Initialize an array to store the minimum number
     # of coins needed for each total value
     count = [float('inf')] * (total + 1)
-    
+
     # 0 coins needed to make a total of 0
     count[0] = 0
 
@@ -28,4 +28,3 @@ def makeChange(coins, total):
     else:
         # Return the minimum number of coins needed for the given total
         return count[total]
-

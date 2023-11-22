@@ -28,4 +28,3 @@ def makeChange(coins, total):
     else:
         # Return the minimum number of coins needed for the given total
         return count[total]
-

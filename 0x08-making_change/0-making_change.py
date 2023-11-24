@@ -7,25 +7,19 @@ def makeChange(coins, total):
     """Return: fewest number of coins needed to meet total
 
     Args:
-        coins (list):  is a list of the values of the coins in your possession
+        coins (list):  is a list of the values
+        of the coins in your possession
         total (int): the total amount to be made using the coins
     """
-    # Initialize an array to store the minimum number
-    # of coins needed for each total value
-    count = [float('inf')] * (total + 1)
+    temp_value = 0
+    coins.sort(reverse=True)
 
-    # 0 coins needed to make a total of 0
-    count[0] = 0
+    if total < 0:
+        return 0
 
-    # Iterate through each coin value
     for coin in coins:
-        for i in range(coin, total + 1):
-            count[i] = min(count[i], count[i - coin] + 1)
+        if total % coin <= total:
+            temp_value += total // coin
+            total = total % coin
 
-    # If count[total] is still float('inf'), total can't be made.
-    if count[total] == float('inf'):
-        return -1
-    else:
-        # Return the minimum number of coins needed for the given total
-        return count[total]
-
+    return temp_value if total == 0 else -1

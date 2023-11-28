@@ -18,7 +18,7 @@ def island_perimeter(grid):
     """
     total_perimeter = 0
     rows = len(grid)
-    cols = len(grid[0])
+    cols = len(grid[0]) if rows > 0 else 0  # Check if grid is not empty
 
     for row in range(rows):
         for col in range(cols):

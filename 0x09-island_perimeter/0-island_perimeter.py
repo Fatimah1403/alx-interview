@@ -18,11 +18,11 @@ def island_perimeter(grid):
     """
     total_perimeter = 0
     rows = len(grid)
-    cols = len(grid[rows])
+    cols = len(grid[0])
 
     for row in range(rows):
         for col in range(cols):
-            if grid[rows][cols] == 1:
+            if grid[row][col] == 1:
                 # increment it's fur sides(top, bottom, left, and right)  # noqa: E501
                 total_perimeter += 4
                 # check for the top neighbor if is land

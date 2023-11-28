@@ -30,16 +30,7 @@ def island_perimeter(grid):
                 if row > 0 and grid[row - 1][col] == 1:
                     total_perimeter -= 2
 
-                # check for bottom
-                if row < rows - 1 and grid[row + 1][col] == 1:
-                    total_perimeter -= 2
-
                 # Check left neighbor
                 if col > 0 and grid[row][col - 1] == 1:
                     total_perimeter -= 2
-
-                # Check right neighbor
-                if col < cols - 1 and grid[row][col + 1] == 1:
-                    total_perimeter -= 2
-
     return total_perimeter

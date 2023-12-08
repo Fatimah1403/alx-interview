@@ -3,7 +3,6 @@
 0-prime_game
 """
 
-
 def check_prime_nos(num):
     """
     Check for prime number
@@ -15,7 +14,6 @@ def check_prime_nos(num):
             return False
     return True
 
-
 def isWinner(x, nums):
     """
     where x is the number of rounds and nums is an array of n
@@ -25,15 +23,20 @@ def isWinner(x, nums):
     """
     if x is None or nums is None or x == 0 or nums == []:
         return None
+    
     Maria = Ben = 0
+    
     for i in range(x):
-        prime = primes(nums[i])
-        if len(prime) % 2 == 0:
+        prime_count = sum(1 for num in range(1, nums[i] + 1) if check_prime_nos(num))
+        
+        if prime_count % 2 == 0:
             Ben += 1
         else:
             Maria += 1
-        if Maria > Ben:
-            return 'Maria'
-        else Ben > Maria:
-            return 'Ben'
+    
+    if Maria > Ben:
+        return 'Maria'
+    elif Ben > Maria:
+        return 'Ben'
+    else:
         return None
